@@ -1,4 +1,5 @@
 "use strict";
+//const prompt = require("prompt-sync")({ sigint: true })
 
 const choices = ['Rock', 'Paper', 'Scissors']
 
@@ -6,17 +7,13 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase()
 }
 
-function getYourChoice() {
-    return choices[Math.floor(Math.random() * 3)].toLowerCase()
-}
-
 function yourChoice() {
     let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
-    while (userChoice < 1 || userChoice > 3) {
+    console.log(userChoice)
+    if (userChoice < 1 || userChoice > 3) {
         console.log('Please enter a valid option.')
-        yourChoice();
-    }
-    if (userChoice == 1) {
+        return
+    } else if (userChoice == 1) {
         return 'rock'
     } else if (userChoice == 2) {
         return 'paper'
@@ -24,7 +21,6 @@ function yourChoice() {
         return 'scissors'
     }
 }
-//console.log(getComputerChoice());
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
@@ -43,8 +39,6 @@ function singleGameRound(playerChoice, computerChoice) {
     } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
         gameResult = 'You lose. Scissors beats paper.'
     }
-
-    //console.log(gameResult[4])
     return gameResult[4];
 }
 
@@ -54,14 +48,15 @@ function game() {
     let l_count = 0;
     while (true) {
         let result = '';
-        //console.log("round " + round)
-        result = singleGameRound(getYourChoice(), getComputerChoice());
+        result = singleGameRound(yourChoice(), getComputerChoice());
         if (result == 'w') {
             w_count++;
             console.log("You win this round.")
         } else if (result == 'l') {
             l_count++;
             console.log("Computer wins this round.")
+        } else if (result == 't') {
+            console.log("It is a tie.")
         }
         if (w_count == 3) {
             console.log("You win the game.")
@@ -74,26 +69,5 @@ function game() {
     }
 }
 
-/*function game() {
-    let result = []
-    let w_count = 0
-    for (let i = 1; i < 6; i++) {
-        result.push(singleGameRound(getYourChoice(), getComputerChoice()))
-    }
-    for (let i = 0; i < 5; i++) {
-        console.log(result[i])
-        if (result[i] == 'w') {
-            w_count++;
-        }
-    }
-    if (w_count >= 3) {
-        console.log("You win!")
-    } else {
-        console.log("The computer wins!")
-    }
-}*/
-
-
-//singleGameRound(getComputerChoice(), getComputerChoice())
 game()
 
