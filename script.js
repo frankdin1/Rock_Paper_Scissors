@@ -6,16 +6,27 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase()
 }
 
+function yourChoice() {
+    let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
+    while (userChoice < 1 || userChoice > 3) {
+        console.log('Please enter a valid option.')
+        yourChoice();
+    }
+    if (userChoice == 1) {
+        return 'rock'
+    } else if (userChoice == 2) {
+        return 'paper'
+    } else if (userChoice == 3) {
+        return 'scissors'
+    }
+}
 //console.log(getComputerChoice());
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
     if (playerChoice == computerChoice) {
-        console.log("It's a tie.");
-        singleGameRound(playerChoice, getComputerChoice());
-    }
-
-    if (playerChoice == 'rock' && computerChoice == 'paper') {
+        gameResult = "It's a tie."
+    } else if (playerChoice == 'rock' && computerChoice == 'paper') {
         gameResult = 'You lose. Paper beats rock.'
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
         gameResult = 'You win. Rock beats scissors.'
@@ -28,7 +39,9 @@ function singleGameRound(playerChoice, computerChoice) {
     } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
         gameResult = 'You lose. Scissors beats paper.'
     }
+    console.log(gameResult)
     return gameResult;
 }
 
-console.log(singleGameRound('rock', getComputerChoice()))
+
+singleGameRound(getComputerChoice(), getComputerChoice())
