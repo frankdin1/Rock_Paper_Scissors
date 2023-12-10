@@ -26,6 +26,7 @@ function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
     if (playerChoice == computerChoice) {
         gameResult = "It's a tie."
+        singleGameRound(yourChoice(), getComputerChoice())
     } else if (playerChoice == 'rock' && computerChoice == 'paper') {
         gameResult = 'You lose. Paper beats rock.'
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
@@ -44,4 +45,4 @@ function singleGameRound(playerChoice, computerChoice) {
 }
 
 
-singleGameRound(getComputerChoice(), getComputerChoice())
+singleGameRound(yourChoice(), getComputerChoice())
