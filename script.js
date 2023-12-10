@@ -46,23 +46,19 @@ function singleGameRound(playerChoice, computerChoice) {
 
     console.log(gameResult[4])
     return gameResult[4];
-
-
-
-
 }
 
 function game() {
     let round = 1;
     let w_count = 0;
     let l_count = 0;
-    while (round <= 5) {
+    while (true) {
         let result = '';
-        console.log(round)
+        console.log("round " + round)
         result = singleGameRound(getYourChoice(), getComputerChoice());
         if (result == 'w') {
             w_count++;
-        } else {
+        } else if (result == 'l') {
             l_count++;
         }
         if (w_count == 3) {
