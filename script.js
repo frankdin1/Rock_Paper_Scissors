@@ -6,6 +6,10 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase()
 }
 
+function getYourChoice() {
+    return choices[Math.floor(Math.random() * 3)].toLowerCase()
+}
+
 function yourChoice() {
     let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
     while (userChoice < 1 || userChoice > 3) {
@@ -26,7 +30,7 @@ function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
     if (playerChoice == computerChoice) {
         gameResult = "It's a tie."
-        singleGameRound(yourChoice(), getComputerChoice())
+        singleGameRound(getYourChoice(), getComputerChoice())
     } else if (playerChoice == 'rock' && computerChoice == 'paper') {
         gameResult = 'You lose. Paper beats rock.'
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
@@ -40,9 +44,29 @@ function singleGameRound(playerChoice, computerChoice) {
     } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
         gameResult = 'You lose. Scissors beats paper.'
     }
-    console.log(gameResult)
-    return gameResult;
+    console.log(gameResult[4])
+    return gameResult[4];
 }
 
+function game() {
+    let result = []
+    let w_count = 0
+    for (let i = 1; i < 6; i++) {
+        result.push(singleGameRound(getYourChoice(), getComputerChoice()))
+    }
+    for (let i = 0; i < 5; i++) {
+        console.log(result[i])
+        if (result[i] == 'w') {
+            w_count++;
+        }
+    }
+    if (w_count >= 3) {
+        console.log("You win!")
+    } else {
+        console.log("The computer wins!")
+    }
+}
 
-singleGameRound(yourChoice(), getComputerChoice())
+//singleGameRound(getComputerChoice(), getComputerChoice())
+game()
+
