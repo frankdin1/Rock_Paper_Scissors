@@ -47,6 +47,8 @@ function game() {
     let w_count = 0;
     let l_count = 0;
     while (true) {
+        console.log("Your score: " + w_count)
+        console.log("Computer score: " + l_count)
         let result = '';
         result = singleGameRound(yourChoice(), getComputerChoice());
         if (result == 'w') {
