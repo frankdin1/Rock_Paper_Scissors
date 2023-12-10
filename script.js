@@ -44,7 +44,7 @@ function singleGameRound(playerChoice, computerChoice) {
         gameResult = 'You lose. Scissors beats paper.'
     }
 
-    console.log(gameResult[4])
+    //console.log(gameResult[4])
     return gameResult[4];
 }
 
@@ -54,18 +54,20 @@ function game() {
     let l_count = 0;
     while (true) {
         let result = '';
-        console.log("round " + round)
+        //console.log("round " + round)
         result = singleGameRound(getYourChoice(), getComputerChoice());
         if (result == 'w') {
             w_count++;
+            console.log("You win this round.")
         } else if (result == 'l') {
             l_count++;
+            console.log("Computer wins this round.")
         }
         if (w_count == 3) {
-            console.log("You win.")
+            console.log("You win the game.")
             break;
         } else if (l_count == 3) {
-            console.log("Computer wins.");
+            console.log("Computer wins the game.");
             break;
         }
         round++;
