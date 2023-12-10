@@ -29,8 +29,7 @@ function yourChoice() {
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
     if (playerChoice == computerChoice) {
-        gameResult = "It's a tie."
-        singleGameRound(getYourChoice(), getComputerChoice())
+        gameResult = 'You tied with Computer.'
     } else if (playerChoice == 'rock' && computerChoice == 'paper') {
         gameResult = 'You lose. Paper beats rock.'
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
@@ -44,11 +43,40 @@ function singleGameRound(playerChoice, computerChoice) {
     } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
         gameResult = 'You lose. Scissors beats paper.'
     }
+
     console.log(gameResult[4])
     return gameResult[4];
+
+
+
+
 }
 
 function game() {
+    let round = 1;
+    let w_count = 0;
+    let l_count = 0;
+    while (round <= 5) {
+        let result = '';
+        console.log(round)
+        result = singleGameRound(getYourChoice(), getComputerChoice());
+        if (result == 'w') {
+            w_count++;
+        } else {
+            l_count++;
+        }
+        if (w_count == 3) {
+            console.log("You win.")
+            break;
+        } else if (l_count == 3) {
+            console.log("Computer wins.");
+            break;
+        }
+        round++;
+    }
+}
+
+/*function game() {
     let result = []
     let w_count = 0
     for (let i = 1; i < 6; i++) {
@@ -65,7 +93,8 @@ function game() {
     } else {
         console.log("The computer wins!")
     }
-}
+}*/
+
 
 //singleGameRound(getComputerChoice(), getComputerChoice())
 game()
