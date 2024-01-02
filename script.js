@@ -22,6 +22,29 @@ function getComputerChoice() {
 //     }
 // }
 
+//create an event listener that displays the user's choice on screen
+const rock = document.querySelector('#rock');
+const playerSelection = document.querySelector('#player-selection')
+
+function displayUserSelection() {
+    playerSelection.innerText = this.innerText;
+}
+
+rock.addEventListener(
+    'click',
+    displayUserSelection
+)
+
+paper.addEventListener(
+    'click',
+    displayUserSelection
+)
+
+scissors.addEventListener(
+    'click',
+    displayUserSelection
+)
+
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
     if (playerChoice == computerChoice) {
