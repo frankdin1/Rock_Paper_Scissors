@@ -7,20 +7,20 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase()
 }
 
-function yourChoice() {
-    let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
-    console.log(userChoice)
-    if (userChoice < 1 || userChoice > 3) {
-        console.log('Please enter a valid option.')
-        return
-    } else if (userChoice == 1) {
-        return 'rock'
-    } else if (userChoice == 2) {
-        return 'paper'
-    } else if (userChoice == 3) {
-        return 'scissors'
-    }
-}
+// function yourChoice() {
+//     let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
+//     console.log(userChoice)
+//     if (userChoice < 1 || userChoice > 3) {
+//         console.log('Please enter a valid option.')
+//         return
+//     } else if (userChoice == 1) {
+//         return 'rock'
+//     } else if (userChoice == 2) {
+//         return 'paper'
+//     } else if (userChoice == 3) {
+//         return 'scissors'
+//     }
+// }
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
