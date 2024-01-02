@@ -31,33 +31,22 @@ function userSelection() {
     return this.innerText;
 }
 
-function makeSelection() {
-    const userChoice = "";
-    if (rock.addEventListener(
-        'click',
-        userSelection
-    )) {
-        userChoice = "rock";
-    }
+let choice = "";
+rock.addEventListener(
+    'click',
+    choice = userSelection
+)
 
-    else if
-        (paper.addEventListener(
-            'click',
-            userSelection
-        )) {
-        userChoice = "paper";
-    }
+paper.addEventListener(
+    'click',
+    choice = userSelection
+)
 
-    else if
-        (scissors.addEventListener(
-            'click',
-            userSelection
-        )) {
-        userChoice = "scissors";
-    }
+scissors.addEventListener(
+    'click',
+    choice = userSelection
+)
 
-    return userChoice;
-}
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
@@ -79,34 +68,35 @@ function singleGameRound(playerChoice, computerChoice) {
     return gameResult[4];
 }
 
-function game() {
-    let round = 1;
-    let w_count = 0;
-    let l_count = 0;
-    while (true) {
-        console.log("Your score: " + w_count)
-        console.log("Computer score: " + l_count)
-        let result = '';
-        result = singleGameRound(yourChoice(), getComputerChoice());
-        if (result == 'w') {
-            w_count++;
-            console.log("You win this round.")
-        } else if (result == 'l') {
-            l_count++;
-            console.log("Computer wins this round.")
-        } else if (result == 't') {
-            console.log("It is a tie.")
-        }
-        if (w_count == 3) {
-            console.log("You win the game.")
-            break;
-        } else if (l_count == 3) {
-            console.log("Computer wins the game.");
-            break;
-        }
-        round++;
-    }
-}
+// function game() {
+//     let round = 1;
+//     let w_count = 0;
+//     let l_count = 0;
+//     while (true) {
+//         console.log("Your score: " + w_count)
+//         console.log("Computer score: " + l_count)
+//         let result = '';
+//         result = singleGameRound(choice, getComputerChoice());
+//         if (result == 'w') {
+//             w_count++;
+//             console.log("You win this round.")
+//         } else if (result == 'l') {
+//             l_count++;
+//             console.log("Computer wins this round.")
+//         } else if (result == 't') {
+//             console.log("It is a tie.")
+//         }
+//         if (w_count == 3) {
+//             console.log("You win the game.")
+//             break;
+//         } else if (l_count == 3) {
+//             console.log("Computer wins the game.");
+//             break;
+//         }
+//         round++;
+//     }
+// }
 
 game()
+
 
