@@ -26,24 +26,38 @@ function getComputerChoice() {
 const rock = document.querySelector('#rock');
 const playerSelection = document.querySelector('#player-selection')
 
-function displayUserSelection() {
+function userSelection() {
     playerSelection.innerText = this.innerText;
+    return this.innerText;
 }
 
-rock.addEventListener(
-    'click',
-    displayUserSelection
-)
+function makeSelection() {
+    const userChoice = "";
+    if (rock.addEventListener(
+        'click',
+        userSelection
+    )) {
+        userChoice = "rock";
+    }
 
-paper.addEventListener(
-    'click',
-    displayUserSelection
-)
+    else if
+        (paper.addEventListener(
+            'click',
+            userSelection
+        )) {
+        userChoice = "paper";
+    }
 
-scissors.addEventListener(
-    'click',
-    displayUserSelection
-)
+    else if
+        (scissors.addEventListener(
+            'click',
+            userSelection
+        )) {
+        userChoice = "scissors";
+    }
+
+    return userChoice;
+}
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
