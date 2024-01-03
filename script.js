@@ -10,11 +10,8 @@ const playerSelection = document.querySelector('#player-selection')
 const computerSelection = document.querySelector('#comp-selection')
 const playerScoreDisplay = document.querySelector('#player-score')
 const compScoreDisplay = document.querySelector('#comp-score')
-
-let playerChoice = playerSelection.innerText;
-let computerChoice = computerSelection.innerText;
-let playerScore = playerScoreDisplay.innerText;
-let computerScore = compScoreDisplay.innerText;
+let userScore = 0;
+let compScore = 0;
 
 function getComputerChoice() {
     console.log("computer choice: " + choices[Math.floor(Math.random() * 3)].toLowerCase())
@@ -63,8 +60,7 @@ function click() {
 
 function singleGameRound(playerChoice, computerChoice) {
     let gameResult = '';
-    let userScore = 0;
-    let compScore = 0;
+
     if (playerChoice == computerChoice) {
         gameResult = 'You tied with Computer.'
     } else if (playerChoice == 'rock' && computerChoice == 'paper') {
@@ -86,8 +82,8 @@ function singleGameRound(playerChoice, computerChoice) {
         gameResult = 'You lose. Scissors beats paper.'
         compScore++;
     }
-    playerScore = userScore;
-    computerScore = compScore;
+    playerScoreDisplay.innerText = userScore;
+    compScoreDisplay.innerText = compScore;
     alert(gameResult);
 }
 click()
