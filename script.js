@@ -4,6 +4,7 @@
 const choices = ['Rock', 'Paper', 'Scissors']
 
 function getComputerChoice() {
+    console.log("computer choice: " + choices[Math.floor(Math.random() * 3)].toLowerCase())
     return choices[Math.floor(Math.random() * 3)].toLowerCase()
 }
 
@@ -24,28 +25,43 @@ function getComputerChoice() {
 
 //create an event listener that displays the user's choice on screen
 const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 const playerSelection = document.querySelector('#player-selection')
+let choice = "";
 
 function userSelection() {
     playerSelection.innerText = this.innerText;
-    return this.innerText;
+    console.log(this.innerText);
+    return this.innerText
 }
 
-let choice = "";
-rock.addEventListener(
-    'click',
-    choice = userSelection
-)
-
-paper.addEventListener(
-    'click',
-    choice = userSelection
-)
-
-scissors.addEventListener(
-    'click',
-    choice = userSelection
-)
+function click() {
+    rock.addEventListener(
+        'click',
+        userSelection
+    )
+    rock.addEventListener(
+        'click',
+        getComputerChoice
+    )
+    paper.addEventListener(
+        'click',
+        userSelection
+    )
+    paper.addEventListener(
+        'click',
+        getComputerChoice
+    )
+    scissors.addEventListener(
+        'click',
+        userSelection
+    )
+    scissors.addEventListener(
+        'click',
+        getComputerChoice
+    )
+}
 
 
 function singleGameRound(playerChoice, computerChoice) {
@@ -67,6 +83,7 @@ function singleGameRound(playerChoice, computerChoice) {
     }
     return gameResult[4];
 }
+click()
 
 // function game() {
 //     let round = 1;
@@ -97,6 +114,6 @@ function singleGameRound(playerChoice, computerChoice) {
 //     }
 // }
 
-game()
+//game()
 
 
