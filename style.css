@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     width: 1000px;
+    height: 1000px;
 }
 
 div {
@@ -22,5 +23,17 @@ button {
 
 table {
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 100px;
+}
+
+th {
+    border: 5px purple solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+tr {
+    display: flex;
+    justify-content: space-around;
+    border: 5px purple solid;
 }
