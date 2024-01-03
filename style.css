@@ -1,0 +1,21 @@
+body {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    height: 50px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    justify-content: center;
+    margin: 2px;
+}
