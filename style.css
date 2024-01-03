@@ -19,3 +19,8 @@ button {
     justify-content: center;
     margin: 2px;
 }
+
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+}
