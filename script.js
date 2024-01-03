@@ -3,37 +3,31 @@
 
 const choices = ['Rock', 'Paper', 'Scissors']
 
-function getComputerChoice() {
-    console.log("computer choice: " + choices[Math.floor(Math.random() * 3)].toLowerCase())
-    return choices[Math.floor(Math.random() * 3)].toLowerCase()
-}
-
-// function yourChoice() {
-//     let userChoice = parseInt(prompt("Choose your hand: 1-Rock, 2-Paper, 3-Scissors"))
-//     console.log(userChoice)
-//     if (userChoice < 1 || userChoice > 3) {
-//         console.log('Please enter a valid option.')
-//         return
-//     } else if (userChoice == 1) {
-//         return 'rock'
-//     } else if (userChoice == 2) {
-//         return 'paper'
-//     } else if (userChoice == 3) {
-//         return 'scissors'
-//     }
-// }
-
-//create an event listener that displays the user's choice on screen
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const playerSelection = document.querySelector('#player-selection')
-let choice = "";
+const computerSelection = document.querySelector('#comp-selection')
+const playerScoreDisplay = document.querySelector('#player-score')
+const compScoreDisplay = document.querySelector('#comp-score')
+
+const playerChoice = playerSelection.innerText;
+const computerChoice = computerSelection.innerText;
+const playerScore = playerScoreDisplay.innerText;
+const compScore = compScoreDisplay.innerText;
+
+function getComputerChoice() {
+    console.log("computer choice: " + choices[Math.floor(Math.random() * 3)].toLowerCase())
+    computerSelection.innerText = choices[Math.floor(Math.random() * 3)].toLowerCase()
+}
 
 function userSelection() {
     playerSelection.innerText = this.innerText;
-    console.log(this.innerText);
-    return this.innerText
+    console.log("user choice: " + this.innerText);
+}
+
+function compareHands() {
+    singleGameRound(playerChoice, computerChoice)
 }
 
 function click() {
