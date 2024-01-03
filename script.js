@@ -96,7 +96,18 @@ function singleGameRound(playerChoice, computerChoice) {
     }
     playerScoreDisplay.innerText = userScore;
     compScoreDisplay.innerText = compScore;
-    alert(gameResult);
+    if (userScore == 5) {
+        alert("YOU WIN!!!")
+        playerScoreDisplay.innerText = 0;
+        compScoreDisplay.innerText = 0;
+    } else if (compScore == 5) {
+        alert("YOU LOSE!!!")
+        playerScoreDisplay.innerText = 0;
+        compScoreDisplay.innerText = 0;
+    }
+    if (userScore != 5 && compScore != 5) {
+        alert(gameResult);
+    }
 }
 click()
 
