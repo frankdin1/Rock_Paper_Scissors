@@ -47,6 +47,12 @@ function click() {
         'click',
         getComputerChoice
     )
+    paper.addEventListener(
+        'click',
+        function () {
+            singleGameRound(playerSelection.innerText, computerSelection.innerText)
+        }
+    )
     scissors.addEventListener(
         'click',
         userSelection
@@ -54,6 +60,12 @@ function click() {
     scissors.addEventListener(
         'click',
         getComputerChoice
+    )
+    scissors.addEventListener(
+        'click',
+        function () {
+            singleGameRound(playerSelection.innerText, computerSelection.innerText)
+        }
     )
 }
 
