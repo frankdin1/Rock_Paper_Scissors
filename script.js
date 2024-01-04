@@ -14,11 +14,11 @@ let userScore = 0;
 let compScore = 0;
 
 function getComputerChoice() {
-    computerSelection.innerText = choices[Math.floor(Math.random() * 3)].toLowerCase()
+    computerSelection.innerText = choices[Math.floor(Math.random() * 3)].toUpperCase()
 }
 
 function userSelection() {
-    playerSelection.innerText = this.innerText.toLowerCase();
+    playerSelection.innerText = this.innerText.toUpperCase();
 }
 
 function click() {
@@ -69,17 +69,17 @@ function click() {
 
 function singleGameRound(playerChoice, computerChoice) {
     if (playerChoice == computerChoice) {
-    } else if (playerChoice == 'rock' && computerChoice == 'paper') {
+    } else if (playerChoice == 'ROCK' && computerChoice == 'PAPER') {
         compScore++;
-    } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+    } else if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS') {
         userScore++;
-    } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
+    } else if (playerChoice == 'SCISSORS' && computerChoice == 'PAPER') {
         userScore++;
-    } else if (playerChoice == 'scissors' && computerChoice == 'rock') {
+    } else if (playerChoice == 'SCISSORS' && computerChoice == 'ROCK') {
         compScore++;
-    } else if (playerChoice == 'paper' && computerChoice == 'rock') {
+    } else if (playerChoice == 'PAPER' && computerChoice == 'ROCK') {
         userScore++;
-    } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
+    } else if (playerChoice == 'PAPER' && computerChoice == 'SCISSORS') {
         compScore++;
     }
 
