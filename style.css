@@ -7,9 +7,15 @@ body {
     display: flex;
     height: 100px;
     background-color: #1a0008;
-    color: greenyellow;
     justify-content: center;
     align-items: center;
+}
+
+#banner-text {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    font-size: 30px;
 }
 
 #rps-choices {
@@ -33,7 +39,7 @@ button {
 }
 
 .table-item {
-    width: 50px;
+    width: 100px;
     text-align: center;
 }
 
@@ -43,17 +49,14 @@ table {
 }
 
 th {
-    padding: 15px;
+    padding: 30px;
     margin: 10px;
-    color: #ffffff;
-
 }
 
 tr {
     display: flex;
     justify-content: space-around;
     border: 5px #000033;
-    color: #ffffff;
     background-color: #1a0008;
 }
 
@@ -61,3 +64,12 @@ tbody tr {
     height: 40px;
     align-items: center;
 }
+
+tr,
+th,
+#banner-text {
+    color: #73e600;
+    text-transform: uppercase;
+}
+
+thead {}
