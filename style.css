@@ -18,6 +18,13 @@ body {
     font-size: 30px;
 }
 
+#instructions {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+
 #rps-choices {
     display: flex;
     justify-content: space-between;
@@ -25,7 +32,6 @@ body {
     height: 50px;
     width: 310px;
     margin: 0 auto;
-    margin-top: 200px;
     margin-bottom: -80px;
 }
 
@@ -67,7 +73,8 @@ tbody tr {
 
 tr,
 th,
-#banner-text {
+#banner-text,
+#instructions {
     color: #73e600;
     text-transform: uppercase;
 }
