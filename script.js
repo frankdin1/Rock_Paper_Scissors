@@ -10,6 +10,7 @@ const playerSelection = document.querySelector('#player-selection')
 const computerSelection = document.querySelector('#comp-selection')
 const playerScoreDisplay = document.querySelector('#player-score')
 const compScoreDisplay = document.querySelector('#comp-score')
+const buttons = document.querySelector('#rps-choices');
 let userScore = 0;
 let compScore = 0;
 
@@ -21,7 +22,13 @@ function userSelection() {
     playerSelection.innerText = this.innerText.toUpperCase();
 }
 
+
 function click() {
+    // buttons.addEventListener(
+    //     'mousemove',
+    //     function () { buttons = pointer; }
+    // )
+
     rock.addEventListener(
         'click',
         userSelection
