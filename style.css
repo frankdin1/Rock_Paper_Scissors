@@ -7,11 +7,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
     height: 50px;
     width: 310px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: -80px;
 }
 
@@ -26,17 +26,25 @@ button {
 
 table {
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 th {
-    border: 5px purple solid;
     padding: 10px;
     margin: 10px;
+    color: #ffffff;
+
 }
 
 tr {
     display: flex;
     justify-content: space-around;
-    border: 5px purple solid;
+    border: 5px #000033;
+    color: #ffffff;
+    background-color: #1a0008;
+}
+
+tbody tr {
+    height: 40px;
+    align-items: center;
 }
